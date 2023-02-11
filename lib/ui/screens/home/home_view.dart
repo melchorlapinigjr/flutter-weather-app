@@ -30,6 +30,7 @@ class HomeView extends StatelessWidget {
                 : Column(
                     children: [
                       UserProfileView(
+                        key: ObjectKey(userProfile),
                         userProfile: userProfile,
                       ),
                       const SearchFormView(),
