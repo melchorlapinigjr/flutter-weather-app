@@ -24,14 +24,14 @@ class UserProfileView extends StatelessWidget {
             height: 64,
           ),
         sizedBoxHeight8(),
-        Text(
-          userProfile.name ?? userProfile.nickname ?? 'No name.',
-          style: Theme.of(context).textTheme.headlineSmall,
+        MyHeadlineSmall(
+          text: userProfile.name ?? userProfile.nickname ?? 'No name.',
         ),
         sizedBoxHeight4(),
-        Text(userProfile.websiteUrl != null
-            ? userProfile.websiteUrl.toString()
-            : 'No webisite url available'),
+        MyBodyMediumText(
+            text: userProfile.websiteUrl != null
+                ? userProfile.websiteUrl.toString()
+                : 'No website url available'),
       ]),
     );
   }
