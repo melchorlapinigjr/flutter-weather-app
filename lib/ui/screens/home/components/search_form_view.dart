@@ -19,7 +19,7 @@ class SearchFormView extends ViewModelWidget<HomeViewModel> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: TextFormField(
                 onChanged: viewModel.onCityInputChanged,
                 validator: viewModel.onValidateInputCity,
