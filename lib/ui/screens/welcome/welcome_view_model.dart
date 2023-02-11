@@ -25,6 +25,7 @@ class WelcomeViewModel extends AppBaseViewModel {
       } else {
         snackBarService.showSnackBar('Something went wrong.');
       }
+      setBusy(false);
     }
   }
 }
