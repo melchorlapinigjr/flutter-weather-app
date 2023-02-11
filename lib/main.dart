@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_weather_app/app/app.locator.dart';
 import 'package:flutter_weather_app/app/app.router.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 
 import 'core/services/navigation/navigation_service.dart';
+
+Logger logger = Logger(
+  printer: PrettyPrinter(),
+);
+
 
 void main() {
  // Register environments and dependencies

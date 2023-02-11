@@ -34,6 +34,8 @@ dependencies:
   get: ^4.6.5
   dio: ^4.0.6
   stacked_services: ^0.9.9
+  auth0_flutter: ^1.0.2
+  logger: ^1.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
