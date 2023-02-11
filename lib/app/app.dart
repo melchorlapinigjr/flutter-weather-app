@@ -26,7 +26,7 @@ import 'package:stacked/stacked_annotations.dart';
   CustomRoute(
       page: CityWeatherDetailsView,
       name: 'CityWeatherDetailsView',
-      transitionsBuilder: TransitionsBuilders.slideRight),
+      transitionsBuilder: TransitionsBuilders.slideLeft),
 ], dependencies: [
   // Declaration of all services need in the app. This needs to be registered in locator. All classes are single instance.
   Singleton(classType: NavigationServiceImpl, asType: NavigationService),

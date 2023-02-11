@@ -76,7 +76,7 @@ class StackedRouter extends _i1.RouterBase {
                 key: args.key, cityWeatherObject: args.cityWeatherObject),
         settings: data,
         transitionsBuilder:
-            data.transition ?? _i5.TransitionsBuilders.slideRight,
+            data.transition ?? _i5.TransitionsBuilders.slideLeft,
       );
     },
   };

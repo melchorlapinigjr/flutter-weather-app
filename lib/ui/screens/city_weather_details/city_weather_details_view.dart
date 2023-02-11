@@ -28,55 +28,60 @@ class CityWeatherDetailsView extends StatelessWidget {
                 ? const Center(
                     child: CircularProgressIndicator(),
                   )
-                : Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        labeledText(
-                          'City:',
-                          MyHeadlineSmall(
-                              text: cityWeatherObject.name ?? 'Unnamed'),
-                        ),
-                        const MyBodyMediumText(
-                          text: 'Today\'s weather forecast.',
-                    isBold: true,
-                  ),
-                  sizedBoxHeight4(),
-                  labeledText(
-                      'Main:',
-                      MyBodyMediumText(
-                          text: cityWeatherObject.weather?.first.main ?? ''),
-                      true),
-                  labeledText(
-                      'Description:',
-                      MyBodyMediumText(
-                          text: cityWeatherObject.weather?.first.description ??
-                              'No description'),
-                      true),
-                  labeledText(
-                      'Lat-Long:',
-                      MyBodyMediumText(
-                          text: cityWeatherObject.coordinates != null
-                              ? '${cityWeatherObject.coordinates!.lat}-${cityWeatherObject.coordinates!.lon}'
-                              : 'No coordinates'),
-                      true),
-                  sizedBoxHeight8(),
-                  MainWeatherView(
-                    weatherInfo: cityWeatherObject.mainWeatherInfo!,
-                  ),
-                  sizedBoxHeight16(),
-                  WindDetailsView(
-                    wind: cityWeatherObject.wind!,
-                  ),
-                  sizedBoxHeight16(),
-                  MyButton(
-                      onPressed: model.onBackButtonPressed,
-                      label: 'Back',
-                      isLoading: model.isBusy),
-                ],
-              ),
+                : SingleChildScrollView(
+                  child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          labeledText(
+                            'City:',
+                            MyHeadlineSmall(
+                                text: cityWeatherObject.name ?? 'Unnamed'),
+                          ),
+                          const MyBodyMediumText(
+                            text: 'Today\'s weather forecast.',
+                      isBold: true,
+                    ),
+                          sizedBoxHeight4(),
+                          labeledText(
+                              'Main:',
+                              MyBodyMediumText(
+                                  text: cityWeatherObject.weather?.first.main ??
+                                      ''),
+                              true),
+                          labeledText(
+                              'Description:',
+                              MyBodyMediumText(
+                                  text: cityWeatherObject
+                                          .weather?.first.description ??
+                                      'No description'),
+                              true),
+                          labeledText(
+                              'Lat-Long:',
+                              MyBodyMediumText(
+                                  text: cityWeatherObject.coordinates != null
+                                      ? '${cityWeatherObject.coordinates!.lat}-${cityWeatherObject.coordinates!.lon}'
+                                      : 'No coordinates'),
+                              true),
+                          sizedBoxHeight8(),
+                          MainWeatherView(
+                            weatherInfo: cityWeatherObject.mainWeatherInfo!,
+                          ),
+                          sizedBoxHeight16(),
+                          WindDetailsView(
+                            wind: cityWeatherObject.wind!,
+                          ),
+                          sizedBoxHeight16(),
+                          MyButton(
+                              onPressed: model.onBackButtonPressed,
+                              label: 'Back',
+                              isLoading: model.isBusy),
+                        ],
+                      ),
             ),
+                ),
           );
         });
   }
