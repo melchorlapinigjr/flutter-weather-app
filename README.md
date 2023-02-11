@@ -23,3 +23,9 @@ GIT PROJECT BRANCH STRUCTURE
 1. Main - this is where all staging features/changes past the test and our final features/codes changes are merged for production build.
 2. Staging - where all our features added from dev will be merged for building test app.
 3. Development - this is where we make new branches for all new features/code changes to be added in our app.
+
+GENERATING CLASSES NEEDED FOR THE APP
+
+Stacked state management relies on stacked_generator(https://pub.dev/packages/stacked_generator) to generate the routing and the dependencies  for it to run. This makes
+is easy for devs and avoid more boiler plates for running the app. This plugin works with build_runner (https://pub.dev/packages/build_runner).
+To generate required classes/script just run this command: flutter pub run build_runner build --delete-conflicting-outputs
