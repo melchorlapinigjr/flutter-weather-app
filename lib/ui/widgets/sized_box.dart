@@ -11,3 +11,7 @@ Widget sizedBoxHeight8() {
 Widget sizedBoxHeight16() {
   return const SizedBox(height: 16);
 }
+
+Widget sizedBoxWidth16() {
+  return const SizedBox(width: 16);
+}
