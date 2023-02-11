@@ -24,6 +24,7 @@ class SearchFormView extends ViewModelWidget<HomeViewModel> {
                 onChanged: viewModel.onCityInputChanged,
                 validator: viewModel.onValidateInputCity,
                 decoration: InputDecoration(
+                  hintText: 'City',
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0)),
