@@ -12,6 +12,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
 @StackedApp(routes: [
+  // Declaration of all routes needed in our app. These routes are generated in main app when onGenerateRoute function is called.
   CustomRoute(
       page: HomeView, 
       name: 'HomeView',
@@ -22,6 +23,7 @@ import 'package:stacked/stacked_annotations.dart';
       name: 'WelcomeView',
       transitionsBuilder: TransitionsBuilders.fadeIn),
 ], dependencies: [
+  // Declaration of all services need in the app. This needs to be registered in locator. All classes are single instance.
   Singleton(classType: NavigationServiceImpl, asType: NavigationService),
   LazySingleton(classType: SnackBarServiceImpl, asType: SnackBarService),
   LazySingleton(classType: ApiServiceImpl, asType: ApiService),
