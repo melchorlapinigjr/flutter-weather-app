@@ -15,7 +15,7 @@ class CityWeatherDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<CityWeatherDetailsViewModel>.nonReactive(
+    return ViewModelBuilder<CityWeatherDetailsViewModel>.reactive(
         viewModelBuilder: () => CityWeatherDetailsViewModel(),
         builder: (context, model, widget) {
           return Scaffold(
@@ -24,18 +24,22 @@ class CityWeatherDetailsView extends StatelessWidget {
               onLogoutPressed: model.onLogoutPressed,
               showLogout: true,
             ),
-            body: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  labeledText(
-                    'City:',
-                    MyHeadlineSmall(text: cityWeatherObject.name ?? 'Unnamed'),
-                  ),
-                  const MyBodyMediumText(
-                    text:
-                        'Today\'s weather forecast.',
+            body: model.isLoggingOut
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        labeledText(
+                          'City:',
+                          MyHeadlineSmall(
+                              text: cityWeatherObject.name ?? 'Unnamed'),
+                        ),
+                        const MyBodyMediumText(
+                          text: 'Today\'s weather forecast.',
                     isBold: true,
                   ),
                   sizedBoxHeight4(),
