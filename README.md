@@ -4,13 +4,17 @@ A weather forecasting app.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+PLEASE FOLLOW THIS GUIDE TO BE ABLE TO RUN THE APP.
 
-A few resources to get you started if this is your first Flutter project:
+GENERAL INFORMATION
+   
+State Management: 
+    The app uses Stacked State Management. 
+    You can learn more about this plugin here: https://pub.dev/packages/stacked
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+REST:
+    The app uses Dio plugin for API calls. Learn more here: https://pub.dev/packages/dio
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Accessing services such as Dialog, Snackbar, Navigation, etc.:
+    The app uses Get plugin. Learn more about this: https://pub.dev/packages/get
+
