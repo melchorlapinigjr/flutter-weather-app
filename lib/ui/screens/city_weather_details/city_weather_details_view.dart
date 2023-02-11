@@ -27,11 +27,18 @@ class CityWeatherDetailsView extends StatelessWidget {
             body: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   labeledText(
                     'City:',
                     MyHeadlineSmall(text: cityWeatherObject.name ?? 'Unnamed'),
                   ),
+                  MyBodyMediumText(
+                    text:
+                        'Today\'s weather forecast. (${DateTime.now().toLocal()})',
+                    isBold: true,
+                  ),
+                  sizedBoxHeight4(),
                   labeledText(
                       'Main:',
                       MyBodyMediumText(
