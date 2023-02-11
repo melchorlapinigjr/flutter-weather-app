@@ -6,4 +6,6 @@ abstract class ApiService {
   Future<Credentials?> login();
 
   Future<CityWeatherObject?> getWeatherByCity(String city);
+
+  Future<void> logout();
 }

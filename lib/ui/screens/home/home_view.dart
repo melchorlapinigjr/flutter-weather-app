@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.nonReactive(
+    return ViewModelBuilder<HomeViewModel>.reactive(
         viewModelBuilder: () => HomeViewModel(),
         builder: (context, model, widget) {
           return Scaffold(
@@ -23,14 +23,18 @@ class HomeView extends StatelessWidget {
               onLogoutPressed: model.onLogoutPressed,
               title: 'Home Page',
             ),
-            body: Column(
-              children: [
-                UserProfileView(
-                  userProfile: userProfile,
-                ),
-                const SearchFormView(),
-              ],
-            ),
+            body: model.isLoggingOut
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Column(
+                    children: [
+                      UserProfileView(
+                        userProfile: userProfile,
+                      ),
+                      const SearchFormView(),
+                    ],
+                  ),
           );
         });
   }

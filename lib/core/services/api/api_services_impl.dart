@@ -48,4 +48,19 @@ class ApiServiceImpl extends ApiService {
       throw DioExceptions.fromDioError(e as DioError);
     }
   }
+
+  @override
+  Future<void> logout() async {
+    try {
+      final auth0 = Auth0(Constants.auth0Domain, _auth0ClientId);
+      await auth0.webAuthentication(scheme: 'demo').logout();
+      return;
+    } catch (e) {
+      // Let's catch future errors
+      if (e is WebAuthenticationException) {
+        throw e.message;
+      }
+      throw Future.error(e);
+    }
+  }
 }

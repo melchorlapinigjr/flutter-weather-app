@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_app/app/app_base_view_model.dart';
 import 'package:flutter_weather_app/core/models/city_weather_object.dart';
-import 'package:flutter_weather_app/main.dart';
 
 class HomeViewModel extends AppBaseViewModel {
   // Global key for form validation
@@ -10,8 +9,6 @@ class HomeViewModel extends AppBaseViewModel {
   get searchCityFormKey => _searchCityFormKey;
 
   String cityQuery = '';
-
-  void onLogoutPressed() {}
 
   void onDisplayWeatherPressed() async {
     try {
