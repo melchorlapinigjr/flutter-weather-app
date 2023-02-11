@@ -2,23 +2,19 @@ class CityWeatherObject {
   Coordinates? coordinates;
   List<Weather>? weather;
   MainWeatherInfo? mainWeatherInfo;
-  int? visibility;
   Wind? wind;
   Rain? rain;
   SunDetails? sunDetails;
   String? name;
-  int? cod;
 
   CityWeatherObject(
       {this.coordinates,
       this.weather,
       this.mainWeatherInfo,
-      this.visibility,
       this.wind,
       this.rain,
       this.sunDetails,
-      this.name,
-      this.cod});
+      this.name});
 
   CityWeatherObject.fromJson(Map<String, dynamic> json) {
     coordinates =
@@ -31,14 +27,12 @@ class CityWeatherObject {
     }
     mainWeatherInfo =
         json['main'] != null ? MainWeatherInfo.fromJson(json['main']) : null;
-    visibility = json['visibility'];
     wind = json['wind'] != null ? Wind.fromJson(json['wind']) : null;
     rain = json['rain'] != null ? Rain.fromJson(json['rain']) : null;
 
     sunDetails = json['sys'] != null ? SunDetails.fromJson(json['sys']) : null;
 
     name = json['name'];
-    cod = json['cod'];
   }
 
   Map<String, dynamic> toJson() {
@@ -52,7 +46,6 @@ class CityWeatherObject {
     if (mainWeatherInfo != null) {
       data['main'] = mainWeatherInfo!.toJson();
     }
-    data['visibility'] = visibility;
     if (wind != null) {
       data['wind'] = wind!.toJson();
     }
@@ -64,7 +57,6 @@ class CityWeatherObject {
       data['sys'] = sunDetails!.toJson();
     }
     data['name'] = name;
-    data['cod'] = cod;
     return data;
   }
 }
