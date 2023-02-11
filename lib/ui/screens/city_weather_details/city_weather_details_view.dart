@@ -33,9 +33,9 @@ class CityWeatherDetailsView extends StatelessWidget {
                     'City:',
                     MyHeadlineSmall(text: cityWeatherObject.name ?? 'Unnamed'),
                   ),
-                  MyBodyMediumText(
+                  const MyBodyMediumText(
                     text:
-                        'Today\'s weather forecast. (${DateTime.now().toLocal()})',
+                        'Today\'s weather forecast.',
                     isBold: true,
                   ),
                   sizedBoxHeight4(),
