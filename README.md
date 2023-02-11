@@ -1,6 +1,7 @@
 # flutter_weather_app
 
-A weather forecasting app.
+A weather forecasting application build in Flutter that demonstrate and running
+natively in iOS and/or Android i.e. in a phone emulator. 
 
 ## Getting Started
 
