@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'core/services/navigation/navigation_service.dart';
 
 void main() {
+ // Register environments and dependencies
+  setupLocator();
   runApp(const MyApp());
 }
 
