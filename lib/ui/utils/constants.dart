@@ -7,5 +7,11 @@ class Constants {
 
   // Open weather api key
   static const _openWeatherAPIKey = '751871495ed3c31ef02425dfda6db6fc';
+
   static get openWeatherAPIKey => _openWeatherAPIKey;
+
+  // auth0 client ID
+  static const _auth0ClientId = 'lXeEJYaiOHkHbZDanih4LWuhXbmMy7CW';
+
+  static get auth0ClientId => _auth0ClientId;
 }

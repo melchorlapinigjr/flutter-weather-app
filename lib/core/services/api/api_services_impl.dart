@@ -7,9 +7,6 @@ import 'package:flutter_weather_app/ui/utils/constants.dart';
 import 'api_services.dart';
 
 class ApiServiceImpl extends ApiService {
-  // auth0 client ID
-  final String _auth0ClientId = 'lXeEJYaiOHkHbZDanih4LWuhXbmMy7CW';
-
   static BaseOptions baseOptions = BaseOptions(
     baseUrl: Constants.baseUrl,
   );
@@ -18,7 +15,7 @@ class ApiServiceImpl extends ApiService {
   @override
   Future<Credentials?> login() async {
     try {
-      final auth0 = Auth0(Constants.auth0Domain, _auth0ClientId);
+      final auth0 = Auth0(Constants.auth0Domain, Constants.auth0ClientId);
       final credentials = await auth0.webAuthentication(scheme: 'demo').login();
       return credentials;
     } catch (e) {
@@ -52,7 +49,7 @@ class ApiServiceImpl extends ApiService {
   @override
   Future<void> logout() async {
     try {
-      final auth0 = Auth0(Constants.auth0Domain, _auth0ClientId);
+      final auth0 = Auth0(Constants.auth0Domain, Constants.auth0ClientId);
       await auth0.webAuthentication(scheme: 'demo').logout();
       return;
     } catch (e) {
