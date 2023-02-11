@@ -16,7 +16,7 @@ class WelcomeView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 74, right: 24, left: 24),
-        child: ViewModelBuilder<WelcomeViewModel>.nonReactive(
+        child: ViewModelBuilder<WelcomeViewModel>.reactive(
             viewModelBuilder: () => WelcomeViewModel(),
             builder: (context, model, widget) {
               return Column(
@@ -28,6 +28,7 @@ class WelcomeView extends StatelessWidget {
                   MyButton(
                     onPressed: model.onLoginPressed,
                     label: 'Login',
+                    isLoading: model.isBusy,
                   )
                 ],
               );
