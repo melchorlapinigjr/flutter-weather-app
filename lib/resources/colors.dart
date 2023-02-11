@@ -1,3 +1,0 @@
-class MyColors {
-  MyColors._();
-}

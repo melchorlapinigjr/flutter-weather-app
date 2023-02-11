@@ -20,15 +20,20 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         Icons.cloud,
         size: 36,
       ),
-      actions: !showLogout!
-          ? []
-          : [
-              TextButton(
-                  onPressed: onLogoutPressed!,
-                  child: const Text(
-                    'Logout',
-                  ))
-            ],
+      actions: [
+        InkWell(
+            onTap: onLogoutPressed!,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                'Logout',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall
+                    ?.copyWith(color: Colors.white),
+              ),
+            )),
+      ],
     );
   }
 
