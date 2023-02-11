@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_app/app/app.router.dart';
 import 'package:flutter_weather_app/app/app_base_view_model.dart';
 import 'package:flutter_weather_app/core/models/city_weather_object.dart';
 
@@ -21,6 +22,13 @@ class HomeViewModel extends AppBaseViewModel {
           await apiService.getWeatherByCity(cityQuery);
 
       setBusy(false);
+      if (weatherObject != null) {
+        navigationService.pushNamed(Routes.CityWeatherDetailsView,
+            arguments: CityWeatherDetailsViewArguments(
+                cityWeatherObject: weatherObject));
+      } else {
+        snackBarService.showSnackBar('City not found. Please try again.');
+      }
     } catch (e) {
       snackBarService.showSnackBar(e.toString());
       setBusy(false);
