@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_app/app/app_base_view_model.dart';
+import 'package:flutter_weather_app/core/models/city_weather_object.dart';
+import 'package:flutter_weather_app/main.dart';
 
 class HomeViewModel extends AppBaseViewModel {
+  // Global key for form validation
   final _searchCityFormKey = GlobalKey<FormState>();
 
   get searchCityFormKey => _searchCityFormKey;
@@ -10,7 +13,22 @@ class HomeViewModel extends AppBaseViewModel {
 
   void onLogoutPressed() {}
 
-  void onDisplayWeatherPressed() {}
+  void onDisplayWeatherPressed() async {
+    try {
+      // Let's make sure we have value in our query
+      if (!isInputCityValid()) return;
+      // Let's update UI process is ongoing
+      setBusy(true);
+      // Fetch weather from API
+      final CityWeatherObject? weatherObject =
+          await apiService.getWeatherByCity(cityQuery);
+
+      setBusy(false);
+    } catch (e) {
+      snackBarService.showSnackBar(e.toString());
+      setBusy(false);
+    }
+  }
 
   void onCityInputChanged(value) {
     cityQuery = value;

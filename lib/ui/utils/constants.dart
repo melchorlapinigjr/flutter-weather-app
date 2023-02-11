@@ -1,5 +1,5 @@
 class Constants {
-  static const String baseUrl = '';
+  static const String baseUrl = 'https://api.openweathermap.org/data/2.5';
   static const String contentType = 'application/json';
 
   //User for auth0 authentication
